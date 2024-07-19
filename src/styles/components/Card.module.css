@@ -1,0 +1,139 @@
+a {
+  text-decoration: none;
+}
+
+.userCard {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 24px 0px 24px;
+  column-gap: 10px;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  height: 85px;
+  width: 310px;
+  margin: 30px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  position: relative;
+  color: black;
+}
+
+.repoCard {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  column-gap: 10px;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  height: 150px;
+  width: 310px;
+  margin: 30px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  position: relative;
+  color: black;
+}
+
+.userCard:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  border-color: black;
+  transition-duration: 0.2s;
+}
+
+.repoCard:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  border-color: black;
+  transition-duration: 0.2s;
+}
+
+.userPfp {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #cacaca;
+  position: absolute;
+  top: -30px;
+  left: 24px;
+  backgroun-color: white;
+}
+
+.userName {
+  font-weight: 600;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.userBio {
+  color: gray;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.userFollow {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 14px;
+  margin: 6px 0px 0px 0px;
+}
+
+.repoStat {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 14px;
+  margin: 6px 0px 0px 0px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.userLocation {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 14px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.repoOwner {
+  display: flex;
+  column-gap: 5px;
+  margin: 5px 0px;
+}
+
+.repoPfp {
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid #cacaca;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-line-clamp: 1;
+}
+
+.repoDesc {
+  font-size: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.repoCreatedAt {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 14px;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
