@@ -10,6 +10,8 @@ interface SearchState {
   totalPages: number;
 }
 
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+
 const initialState: SearchState = {
   data: [],
   status: "idle",
@@ -22,7 +24,7 @@ export const fetchResults = createAsyncThunk("search/fetchResults", async ({ que
   try {
     const searchResponse = await axios.get(`https://api.github.com/search/${type}`, {
       headers: {
-        Authorization: `token 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`,
+        Authorization: `token ${GITHUB_TOKEN}`,
       },
       params: {
         q: query,
