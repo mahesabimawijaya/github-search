@@ -5,7 +5,7 @@ import styles from "../styles/components/Card.module.css";
 
 const RepositoryCard: React.FC<{ repo: RepositoryType }> = ({ repo }) => {
   return (
-    <a href={repo.html_url}>
+    <a target="_blank" rel="noopener noreferrer" href={repo.html_url}>
       <div className={styles.repoCard}>
         <p className={styles.userName}>{repo.name}</p>
         <div className={styles.repoOwner}>

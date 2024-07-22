@@ -3,7 +3,7 @@ import { UserType } from "../types/UserRepo";
 
 const UserCard: React.FC<{ user: UserType }> = ({ user }) => {
   return (
-    <a href={user.html_url}>
+    <a target="_blank" rel="noopener noreferrer" href={user.html_url}>
       <div className={styles.userCard}>
         <img src={user.avatar_url} alt="profile" className={styles.userPfp} />
         <p className={styles.userLocation}>{user.location}</p>

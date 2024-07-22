@@ -8,6 +8,7 @@ import Pagination from "../components/Pagination";
 import Error from "../components/Error";
 import { useEffect, useState } from "react";
 import { fetchResults } from "../redux/slices/searchSlice";
+import { RepositoryType, UserType } from "../types/UserRepo";
 
 export default function HomePage() {
   const { data, status, error, totalPages } = useAppSelector((state) => state.search);
@@ -34,7 +35,11 @@ export default function HomePage() {
       <SearchBar setQuery={setQuery} setType={setType} setPage={setPage} />
       <section className={styles.cardContainer}>
         {status === "loading" && <Loading />}
-        {status === "failed" ? <Error error={error} /> : data.map((item) => (item.type === "User" ? <UserCard key={item.id} user={item} /> : <RepositoryCard key={item.id} repo={item} />))}
+        {status === "failed" ? (
+          <Error error={error} />
+        ) : (
+          data.map((item) => ("type" in item ? <UserCard key={item.id} user={item as UserType} /> : <RepositoryCard key={item.id} repo={item as RepositoryType} />))
+        )}
       </section>
       <Pagination page={page} totalPages={totalPages} setPage={setPage} />
     </>

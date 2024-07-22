@@ -22,7 +22,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ setQuery, setType, setPage }) => 
 
   useEffect(() => {
     setQuery(debouncedQuery);
-    setPage(1); // Reset to the first page on new search
+    setPage(1);
   }, [debouncedQuery, setQuery, setPage]);
 
   return (
@@ -44,6 +44,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ setQuery, setType, setPage }) => 
                 <p
                   key={i}
                   onClick={() => {
+                    setQuery("");
                     setType(option.toLowerCase());
                     setLocalType(option);
                     setPage(1);

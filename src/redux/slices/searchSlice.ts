@@ -1,16 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { UserType } from "../../types/UserRepo";
+import { RepositoryType, UserType } from "../../types/UserRepo";
 
 interface SearchState {
-  data: UserType[];
+  data: UserType[] | RepositoryType[];
   status: "idle" | "loading" | "succeeded" | "failed";
   error: string | null;
   totalResults: number;
   totalPages: number;
 }
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const GITHUB_TOKEN = import.meta.env.VITE_REACT_APP_GITHUB_TOKEN;
 
 const initialState: SearchState = {
   data: [],
